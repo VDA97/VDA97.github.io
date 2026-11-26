@@ -14,33 +14,193 @@
     <!--CSS Project-->
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Complementos leves sem quebrar seu css/styles.css */
-        .cv-block {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .cv-item {
-            margin-bottom: 1.1rem;
-        }
-        .cv-item-header {
+        /* Layout compacto, ícones contidos e blocos lado a lado */
+        #container {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            font-weight: 700;
+            min-height: 100vh;
         }
-        .cv-sub {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 0.35rem;
+        #bio-container {
+            flex: 0 0 280px;
+            padding: 1.75rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.65rem;
         }
-        .cv-list {
-            padding-left: 1.2rem;
+        #bio-container h2 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        #bio-image {
+            width: 145px;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        #bio-container p {
+            font-size: 0.88rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+        .side-meta {
+            font-size: 0.8rem;
+            opacity: 0.85;
+            line-height: 1.45;
             margin-top: 0.25rem;
         }
-        .cv-list li {
-            margin-bottom: 0.3rem;
+        #social-container {
+            list-style: none;
+            padding: 0;
+            margin: 0.25rem 0;
+            display: flex;
+            gap: 0.75rem;
+            font-size: 1.3rem;
+        }
+        #email-container {
+            font-size: 0.82rem;
+            word-break: break-all;
+        }
+
+        #about-container {
+            flex: 1;
+            padding: 1.75rem 2rem;
+            max-width: 1120px;
+        }
+        #name {
+            font-size: 1.85rem;
+            margin: 0 0 0.2rem 0;
+        }
+        #title {
+            font-size: 1rem;
+            margin: 0 0 0.75rem 0;
+        }
+        .description {
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 0 0 0.55rem 0;
+        }
+        .top-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 0.75rem 0 1.25rem 0;
+        }
+        #btn-projects {
+            margin: 0;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.85rem;
+        }
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            opacity: 0.9;
+        }
+        .pill {
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        #skills-section-title,
+        .section-heading {
+            font-size: 1.15rem;
+            margin: 1.15rem 0 0.5rem 0;
+        }
+
+        /* Ícones compactos para não inflar o layout */
+        #skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.4rem;
+        }
+        .skills-box {
+            padding: 0.75rem 0.9rem;
+            margin: 0;
+        }
+        .skills-title {
+            font-size: 0.92rem;
+            margin-bottom: 0.4rem;
+        }
+        .skills-box i {
+            font-size: 1.45rem;
+            margin-right: 0.35rem;
+        }
+        .skill-note {
+            font-size: 0.78rem;
+            opacity: 0.85;
+            margin-top: 0.4rem;
+            line-height: 1.35;
+        }
+
+        /* Experiência, formação e projetos lado a lado */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 0.85rem;
+            margin-top: 0.4rem;
+        }
+        .compact-card {
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+        .card-period {
+            font-size: 0.78rem;
+            opacity: 0.8;
+            white-space: nowrap;
+        }
+        .card-sub {
+            font-size: 0.8rem;
+            opacity: 0.78;
+            margin-bottom: 0.4rem;
+        }
+        .compact-list {
+            padding-left: 1.05rem;
+            margin: 0;
+            font-size: 0.83rem;
+            line-height: 1.4;
+        }
+        .compact-list li {
+            margin-bottom: 0.25rem;
+        }
+        .compact-card a {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 820px) {
+            #container {
+                flex-direction: column;
+            }
+            #bio-container {
+                flex: none;
+                width: 100%;
+                padding: 1.25rem 1rem;
+            }
+            #bio-image {
+                width: 115px;
+                height: 115px;
+            }
+            #about-container {
+                padding: 1.25rem 1rem;
+            }
         }
     </style>
 </head>
@@ -51,6 +211,13 @@
             <img id="bio-image" src="img/GitphotoVictor.jpg" alt="Victor Davi Almeida">
             <p>Hello, I'm Victor Davi Almeida and I develop <span class="highlight">Software using Modern C++</span>.</p>
             <p id="welcome-text">Welcome :)</p>
+
+            <div class="side-meta">
+                <div><strong>Target:</strong> Germany / Europe</div>
+                <div><strong>Visa:</strong> Sponsorship / EU Blue Card</div>
+                <div><strong>English:</strong> Fluent &bull; <strong>PT:</strong> Native</div>
+            </div>
+
             <ul id="social-container">
                 <li>
                     <a href="https://www.linkedin.com/in/victor-davi-almeida-660993386/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -63,6 +230,7 @@
                     </a>
                 </li>
             </ul>
+
             <div id="email-container">
                 <ion-icon name="mail-outline"></ion-icon>
                 <a href="mailto:victor.d.almeida.97@gmail.com">victor.d.almeida.97@gmail.com</a>
@@ -71,93 +239,106 @@
 
         <section id="about-container">
             <h1 id="name">Victor Davi Almeida</h1>
-            <p id="title"><span class="highlight">C++ Software Engineer</span></p>
+            <p id="title"><span class="highlight">C++ Software Engineer</span> &mdash; Modern C++ (11/17/20), Middleware &amp; Systems</p>
             <p class="description">
-                I'm an Electrical Engineer with an <span class="highlight">MBA in Software Engineering (USP / ESALQ, 2026)</span>, focused on Modern C++ (11/17/20), middleware, concurrency, and Linux systems.
-            </p>
-            <p class="description">
-                Currently working with <span class="highlight">C/C++ middleware</span> at LG Electronics, with prior embedded experience developing <span class="highlight">ESP32 firmware, TCP/IP communication, and Toradex / Yocto Linux</span> systems at IGT Tecnologia.
-            </p>
-            <p class="description">
-                Target: <span class="highlight">Germany / Europe</span> &bull; Visa Sponsorship &amp; EU Blue Card eligible &bull; <span class="highlight">English: Fluent</span> &bull; Portuguese: Native.
+                Electrical Engineer with an <span class="highlight">MBA in Software Engineering (USP / ESALQ, 2026)</span>. Experienced in C/C++ middleware at LG Electronics (lifecycle, FSM, concurrency, O(P&times;N) to O(N) optimization) and embedded systems at IGT Tecnologia (<span class="highlight">ESP32, TCP/IP, Toradex / Yocto Linux</span>).
             </p>
 
-            <a href="https://github.com/VDA97?tab=repositories" target="_blank" rel="noopener noreferrer" id="btn-projects">
-                <ion-icon name="share-social-outline"></ion-icon>
-                <span>View Projects</span>
-            </a>
+            <div class="top-actions">
+                <a href="https://github.com/VDA97?tab=repositories" target="_blank" rel="noopener noreferrer" id="btn-projects">
+                    <ion-icon name="share-social-outline"></ion-icon>
+                    <span>View Projects</span>
+                </a>
+                <div class="pill-row">
+                    <span class="pill">Modern C++ (11/17/20)</span>
+                    <span class="pill">Linux &amp; Yocto</span>
+                    <span class="pill">ESP32 &amp; TCP/IP</span>
+                    <span class="pill">Python &amp; Kivy</span>
+                </div>
+            </div>
 
             <h2 id="skills-section-title">My Skills</h2>
-            <p class="description">Technologies and engineering practices in my daily and project stack:</p>
             <div id="skills-container">
                 <div class="skills-box">
                     <p class="skills-title">C &amp; C++</p>
                     <i class="devicon-cplusplus-plain colored"></i>
                     <i class="devicon-c-plain colored"></i>
                     <i class="devicon-embeddedc-plain colored"></i>
+                    <div class="skill-note">C++11/17/20, STL, Boost, FSM, Object Pools, Smart Pointers</div>
                 </div>
                 <div class="skills-box">
-                    <p class="skills-title">Linux &amp; Embedded (ESP32 / Yocto)</p>
+                    <p class="skills-title">Linux &amp; ESP32</p>
                     <i class="devicon-linux-plain"></i>
                     <i class="devicon-docker-plain colored"></i>
+                    <div class="skill-note">Embedded Linux, Yocto / Toradex, ESP32 firmware, TCP/IP</div>
                 </div>
                 <div class="skills-box">
                     <p class="skills-title">Python &amp; Kivy</p>
                     <i class="devicon-python-plain colored"></i>
+                    <div class="skill-note">Python tooling, scripting, and Kivy desktop/UI apps</div>
                 </div>
                 <div class="skills-box">
-                    <p class="skills-title">IDE &amp; Version Control</p>
+                    <p class="skills-title">IDE &amp; Git</p>
                     <i class="devicon-visualstudio-plain colored"></i>
                     <i class="devicon-git-plain-wordmark colored"></i>
                     <i class="devicon-github-original-wordmark"></i>
+                    <div class="skill-note">Git, CMake, debugging, log analysis</div>
                 </div>
             </div>
 
-            <div class="cv-block">
-                <h2 class="skills-title" style="font-size: 1.25rem; margin-bottom: 0.8rem;">Experience</h2>
-
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span>C++ Software Engineer — LG Electronics</span>
-                        <span>2022 – Present</span>
+            <h2 class="section-heading">Experience</h2>
+            <div class="two-col-grid">
+                <div class="compact-card">
+                    <div class="card-head">
+                        <span>C++ Software Engineer &mdash; LG Electronics</span>
+                        <span class="card-period">2022 &ndash; Present</span>
                     </div>
-                    <div class="cv-sub">São Paulo, Brazil</div>
-                    <ul class="cv-list">
-                        <li>Developed and maintained core execution middleware (Ginga/NCLua), managing application lifecycles and execution states.</li>
-                        <li>Built modular C++ architectures using Finite State Machines (FSM), Factory, Singleton, and callback decoupling.</li>
-                        <li>Refactored HTTP connection management with object pools and thread-safe async queues; reduced algorithmic complexity from O(P&times;N) to O(N).</li>
-                        <li>Resolved memory leaks and concurrency defects using Smart Pointers and log diagnostics.</li>
+                    <div class="card-sub">Middleware (Ginga/NCLua) &bull; S&atilde;o Paulo</div>
+                    <ul class="compact-list">
+                        <li>Application lifecycle, execution states, FSM, Factory, Singleton.</li>
+                        <li>Connection pooling &amp; async queues; O(P&times;N) to O(N) optimization.</li>
+                        <li>Memory leak and concurrency fixes with Smart Pointers &amp; logs.</li>
                     </ul>
                 </div>
 
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span>Junior Software Engineer — IGT Tecnologia</span>
-                        <span>2021 – 2022</span>
+                <div class="compact-card">
+                    <div class="card-head">
+                        <span>Junior Software Engineer &mdash; IGT Tecnologia</span>
+                        <span class="card-period">2021 &ndash; 2022</span>
                     </div>
-                    <div class="cv-sub">Brazil</div>
-                    <ul class="cv-list">
-                        <li>Developed C/C++ master-slave firmware for ESP32 microcontrollers controlling dual-motor crane systems.</li>
-                        <li>Implemented TCP/IP socket communication between a Toradex SoM (Yocto Embedded Linux) and the master ESP32 unit.</li>
-                        <li>Built an interface and control layer for system monitoring and configuration.</li>
+                    <div class="card-sub">Embedded &amp; Networking &bull; Brazil</div>
+                    <ul class="compact-list">
+                        <li>C/C++ master-slave ESP32 firmware for dual-motor crane control.</li>
+                        <li>TCP/IP socket communication between Toradex (Yocto Linux) and ESP32.</li>
+                        <li>Control/monitoring interface over embedded Linux.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="cv-block">
-                <h2 class="skills-title" style="font-size: 1.25rem; margin-bottom: 0.8rem;">Education &amp; Featured Projects</h2>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span>MBA in Software Engineering — USP / ESALQ</span>
-                        <span>2026</span>
+            <h2 class="section-heading">Projects &amp; Education</h2>
+            <div class="two-col-grid">
+                <div class="compact-card">
+                    <div class="card-head">
+                        <span>kv-store-distributed &amp; dtv-app-manager-middleware</span>
                     </div>
-                    <div class="cv-sub">B.Sc. in Electrical Engineering — FIEL (2021)</div>
+                    <div class="card-sub">GitHub (@VDA97)</div>
+                    <ul class="compact-list">
+                        <li><strong>kv-store-distributed:</strong> Distributed key-value store &amp; concurrency.</li>
+                        <li><strong>dtv-app-manager-middleware:</strong> SOLID middleware sample &amp; CMake.</li>
+                    </ul>
+                    <a href="https://github.com/VDA97/kv-store-distributed" target="_blank" rel="noopener noreferrer">Open kv-store-distributed &rarr;</a>
                 </div>
-                <div class="cv-item">
-                    <ul class="cv-list">
-                        <li><strong>kv-store-distributed</strong>: Distributed key-value store exploration in C++ (concurrency, storage, system design).</li>
-                        <li><strong>dtv-app-manager-middleware</strong>: Middleware application manager sample using SOLID principles, CMake, and unit tests.</li>
-                        <li><strong>Python &amp; Kivy</strong>: Python tooling, scripting, and Kivy GUI application development.</li>
+
+                <div class="compact-card">
+                    <div class="card-head">
+                        <span>Academic Background</span>
+                        <span class="card-period">2021 &ndash; 2026</span>
+                    </div>
+                    <div class="card-sub">Degrees &amp; Qualification</div>
+                    <ul class="compact-list">
+                        <li><strong>MBA in Software Engineering</strong> &mdash; USP / ESALQ (2026).</li>
+                        <li><strong>B.Sc. in Electrical Engineering</strong> &mdash; FIEL (2021).</li>
+                        <li><strong>Languages:</strong> English (Fluent), Portuguese (Native).</li>
                     </ul>
                 </div>
             </div>
