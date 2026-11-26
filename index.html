@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Victor Davi Almeida</title>
+    <title>Victor Davi Almeida — C++ Software Engineer</title>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,36 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <!--CSS Project-->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Complementos leves sem quebrar seu css/styles.css */
+        .cv-block {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .cv-item {
+            margin-bottom: 1.1rem;
+        }
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-weight: 700;
+        }
+        .cv-sub {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.35rem;
+        }
+        .cv-list {
+            padding-left: 1.2rem;
+            margin-top: 0.25rem;
+        }
+        .cv-list li {
+            margin-bottom: 0.3rem;
+        }
+    </style>
 </head>
 <body>
     <main id="container">
@@ -38,38 +68,42 @@
                 <a href="mailto:victor.d.almeida.97@gmail.com">victor.d.almeida.97@gmail.com</a>
             </div>
         </aside>
+
         <section id="about-container">
             <h1 id="name">Victor Davi Almeida</h1>
             <p id="title"><span class="highlight">C++ Software Engineer</span></p>
             <p class="description">
-                I'm an Electrical Engineer with an <span class="highlight">MBA in Software Engineering (USP / ESALQ, 2026)</span>, focused on Modern C++ (11/17/20), middleware, and core systems.
+                I'm an Electrical Engineer with an <span class="highlight">MBA in Software Engineering (USP / ESALQ, 2026)</span>, focused on Modern C++ (11/17/20), middleware, concurrency, and Linux systems.
             </p>
             <p class="description">
-                Currently working with <span class="highlight">C/C++ middleware</span> at LG Electronics (lifecycle management, FSM, connection pooling, concurrency, and algorithmic optimization).
+                Currently working with <span class="highlight">C/C++ middleware</span> at LG Electronics, with prior embedded experience developing <span class="highlight">ESP32 firmware, TCP/IP communication, and Toradex / Yocto Linux</span> systems at IGT Tecnologia.
             </p>
             <p class="description">
-                Previously worked as a Junior Software Engineer at IGT Tecnologia developing <span class="highlight">ESP32 firmware, TCP/IP communication, and Toradex / Yocto Linux</span> systems, alongside HTML5 and Node.js interfaces.
+                Target: <span class="highlight">Germany / Europe</span> &bull; Visa Sponsorship &amp; EU Blue Card eligible &bull; <span class="highlight">English: Fluent</span> &bull; Portuguese: Native.
             </p>
-            <p class="description">
-                Open to relocation to Germany / Europe (EU Blue Card / visa sponsorship) with fluent English.
-            </p>
+
             <a href="https://github.com/VDA97?tab=repositories" target="_blank" rel="noopener noreferrer" id="btn-projects">
                 <ion-icon name="share-social-outline"></ion-icon>
                 <span>View Projects</span>
             </a>
+
             <h2 id="skills-section-title">My Skills</h2>
-            <p class="description">Technologies in my daily and engineering stack:</p>
+            <p class="description">Technologies and engineering practices in my daily and project stack:</p>
             <div id="skills-container">
                 <div class="skills-box">
-                    <p class="skills-title">C++ &amp; Core Systems</p>
+                    <p class="skills-title">C &amp; C++</p>
                     <i class="devicon-cplusplus-plain colored"></i>
+                    <i class="devicon-c-plain colored"></i>
                     <i class="devicon-embeddedc-plain colored"></i>
-                    <i class="devicon-arduino-plain colored"></i>
                 </div>
                 <div class="skills-box">
-                    <p class="skills-title">Linux &amp; Containers</p>
+                    <p class="skills-title">Linux &amp; Embedded (ESP32 / Yocto)</p>
                     <i class="devicon-linux-plain"></i>
                     <i class="devicon-docker-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skills-title">Python &amp; Kivy</p>
+                    <i class="devicon-python-plain colored"></i>
                 </div>
                 <div class="skills-box">
                     <p class="skills-title">IDE &amp; Version Control</p>
@@ -77,20 +111,59 @@
                     <i class="devicon-git-plain-wordmark colored"></i>
                     <i class="devicon-github-original-wordmark"></i>
                 </div>
-                <div class="skills-box">
-                    <p class="skills-title">Web &amp; Node.js</p>
-                    <i class="devicon-nodejs-plain colored"></i>
-                    <i class="devicon-bootstrap-plain-wordmark colored"></i>
+            </div>
+
+            <div class="cv-block">
+                <h2 class="skills-title" style="font-size: 1.25rem; margin-bottom: 0.8rem;">Experience</h2>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>C++ Software Engineer — LG Electronics</span>
+                        <span>2022 – Present</span>
+                    </div>
+                    <div class="cv-sub">São Paulo, Brazil</div>
+                    <ul class="cv-list">
+                        <li>Developed and maintained core execution middleware (Ginga/NCLua), managing application lifecycles and execution states.</li>
+                        <li>Built modular C++ architectures using Finite State Machines (FSM), Factory, Singleton, and callback decoupling.</li>
+                        <li>Refactored HTTP connection management with object pools and thread-safe async queues; reduced algorithmic complexity from O(P&times;N) to O(N).</li>
+                        <li>Resolved memory leaks and concurrency defects using Smart Pointers and log diagnostics.</li>
+                    </ul>
                 </div>
-                <div class="skills-box">
-                    <p class="skills-title">Front-End</p>
-                    <i class="devicon-html5-plain colored"></i>
-                    <i class="devicon-css3-plain colored"></i>
-                    <i class="devicon-javascript-plain colored"></i>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>Junior Software Engineer — IGT Tecnologia</span>
+                        <span>2021 – 2022</span>
+                    </div>
+                    <div class="cv-sub">Brazil</div>
+                    <ul class="cv-list">
+                        <li>Developed C/C++ master-slave firmware for ESP32 microcontrollers controlling dual-motor crane systems.</li>
+                        <li>Implemented TCP/IP socket communication between a Toradex SoM (Yocto Embedded Linux) and the master ESP32 unit.</li>
+                        <li>Built an interface and control layer for system monitoring and configuration.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-block">
+                <h2 class="skills-title" style="font-size: 1.25rem; margin-bottom: 0.8rem;">Education &amp; Featured Projects</h2>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span>MBA in Software Engineering — USP / ESALQ</span>
+                        <span>2026</span>
+                    </div>
+                    <div class="cv-sub">B.Sc. in Electrical Engineering — FIEL (2021)</div>
+                </div>
+                <div class="cv-item">
+                    <ul class="cv-list">
+                        <li><strong>kv-store-distributed</strong>: Distributed key-value store exploration in C++ (concurrency, storage, system design).</li>
+                        <li><strong>dtv-app-manager-middleware</strong>: Middleware application manager sample using SOLID principles, CMake, and unit tests.</li>
+                        <li><strong>Python &amp; Kivy</strong>: Python tooling, scripting, and Kivy GUI application development.</li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
+
     <!--Ion Icons-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
